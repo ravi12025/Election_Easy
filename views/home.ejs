@@ -1,0 +1,25 @@
+<%- include("partials/header.ejs") -%>
+
+
+
+<h1><a href = '/compose'> <button type="button" class="btn btn-danger">Report mishappening</button> </a></h1>
+
+ <% newpost.forEach(function(thispost){  %>
+    <h1><%= thispost.title  %></h1> 
+    <% if((thispost.post).length > 100){ %>
+        <%= (thispost.post).substring(0,100)+"..." %>
+        <%}else{%>
+            <%= thispost.post %>
+        <% } %>
+        
+    <!-- <a href="/post/<%=thispost.title%>" >Read more</a> -->
+        <a href="/post/<%=thispost._id%>" >Read more</a>
+    <!-- if (str.length > 10) {
+        return (str.substring(0, 10) + "...");
+    }
+    else {
+    return str; -->
+
+ <% }); %>
+
+<%- include("partials/footer.ejs")  -%>
